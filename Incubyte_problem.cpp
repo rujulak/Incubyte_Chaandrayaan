@@ -15,6 +15,27 @@ class Lander
         z = z0;
         direction = dir0;
     }
+
+     void moveForward()
+    {
+        if (direction == 'N')
+            y++;
+        else if (direction == 'S')
+            y--;
+        else if (direction == 'E')
+            x++;
+        else if (direction == 'W')
+            x--;
+        else if (direction == 'U')
+            z++;
+        else if (direction == 'D')
+            z--;
+    }
+
+    void printPoints()
+    {
+        cout << "Current Coordinates: (" << x << ", " << y << ", " << z << "), Direction: " << direction << endl;
+    }
 };
 int main()
 {
