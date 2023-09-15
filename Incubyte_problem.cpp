@@ -32,6 +32,22 @@ class Lander
             z--;
     }
 
+    void moveBackward()
+    {
+        if (direction == 'N')
+            y--;
+        else if (direction == 'S')
+            y++;
+        else if (direction == 'E')
+            x--;
+        else if (direction == 'W')
+            x++;
+        else if (direction == 'U')
+            z--;
+        else if (direction == 'D')
+            z++;
+    }
+
     void printPoints()
     {
         cout << "Current Coordinates: (" << x << ", " << y << ", " << z << "), Direction: " << direction << endl;
@@ -57,6 +73,10 @@ int main()
         if(vec[i] == 'f')
         {
             chandrayan.moveForward();
+        }
+        else if (vec[i] == 'b')
+        {
+            chandrayan.moveBackward();
         }
     }
     return 0;
