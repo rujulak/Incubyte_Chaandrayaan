@@ -134,19 +134,19 @@ int main()
     for (char command : commands)
     {
         if (command == 'f')
-            Lander.moveForward();
+            chandrayan.moveForward();
         else if (command == 'b')
-            Lander.moveBackward();
+            chandrayan.moveBackward();
         else if (command == 'l')
-            Lander.turnLeft();
+            chandrayan.turnLeft();
         else if (command == 'r')
-            Lander.turnRight();
+            chandrayan.turnRight();
         else if (command == 'u')
-            Lander.turnUp();
+            chandrayan.turnUp();
         else if (command == 'd')
-            Lander.turnDown();
+            chandrayan.turnDown();
 
     }
-    Lander.printPoints();
+    chandrayan.printPoints();
     return 0;
 }
