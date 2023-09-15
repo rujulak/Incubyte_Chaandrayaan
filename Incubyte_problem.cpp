@@ -48,6 +48,40 @@ class Lander
             z++;
     }
 
+        void turnLeft()
+    {
+        if (direction == 'N')
+            direction = 'W';
+        else if (direction == 'S')
+            direction = 'E';
+        else if (direction == 'E')
+            direction = 'N';
+        else if (direction == 'W')
+            direction = 'S';
+        else if (direction == 'U')
+            direction = 'N';
+        else if (direction == 'D')
+            direction = 'S';
+    }
+
+    void turnRight()
+    {
+        if (direction == 'N')
+            direction = 'E';
+        else if (direction == 'S')
+            direction = 'W';
+        else if (direction == 'E')
+            direction = 'S';
+        else if (direction == 'W')
+            direction = 'N';
+        else if (direction == 'U')
+            direction = 'S';
+        else if (direction == 'D')
+            direction = 'N';
+    }
+
+    
+
     void printPoints()
     {
         cout << "Current Coordinates: (" << x << ", " << y << ", " << z << "), Direction: " << direction << endl;
@@ -67,17 +101,29 @@ int main()
     cin>>dirStart;
 
     Lander chandrayan(xStart, yStart, zStart, dirStart);
-    vector<char> vec = {'f'};
-    for(int i = 0; i < vec.size(); i++)
+    
+
+    int n;
+    cout << "Enter Number of Commands: ";
+    cin >> n;
+    vector<char> commands(n);
+    cout << "Enter Commands: ";
+    for (int i = 0; i < n; i++)
     {
-        if(vec[i] == 'f')
-        {
-            chandrayan.moveForward();
-        }
-        else if (vec[i] == 'b')
-        {
-            chandrayan.moveBackward();
-        }
+        cin >> commands[i];
     }
+
+    for (char command : commands)
+    {
+        if (command == 'f')
+            Lander.moveForward();
+        else if (command == 'b')
+            Lander.moveBackward();
+        else if (command == 'l')
+            Lander.turnLeft();
+        else if (command == 'r')
+            Lander.turnRight();
+    }
+    Lander.printPoints();
     return 0;
 }
