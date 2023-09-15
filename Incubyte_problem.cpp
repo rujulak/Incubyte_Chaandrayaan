@@ -80,7 +80,25 @@ class Lander
             direction = 'N';
     }
 
-    
+    void turnUp()
+    {
+        if (direction != 'U' || direction != 'D')
+            direction = 'U';
+        else if (direction == 'U')
+            direction = 'N';
+        else if (direction == 'D')
+            direction = 'S';
+    }
+
+    void turnDown()
+    {
+        if (direction != 'U' || direction != 'D')
+            direction = 'D';
+        else if (direction == 'U')
+            direction = 'S';
+        else if (direction == 'D')
+            direction = 'N';
+    } 
 
     void printPoints()
     {
@@ -123,6 +141,11 @@ int main()
             Lander.turnLeft();
         else if (command == 'r')
             Lander.turnRight();
+        else if (command == 'u')
+            Lander.turnUp();
+        else if (command == 'd')
+            Lander.turnDown();
+
     }
     Lander.printPoints();
     return 0;
